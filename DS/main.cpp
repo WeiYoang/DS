@@ -7,9 +7,10 @@
 //
 
 #include <iostream>
-
+#include "list/Static_list.cpp"
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Static_list test;
+    test.SetValue(1000);
+    std::cout<<test;
     return 0;
 }

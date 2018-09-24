@@ -25,6 +25,13 @@
 /* Begin PBXFileReference section */
 		2995A81E2158F66C00947B7D /* DS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DS; sourceTree = BUILT_PRODUCTS_DIR; };
 		2995A8212158F66C00947B7D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2995A8292158F68C00947B7D /* Static_list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Static_list.hpp; sourceTree = "<group>"; };
+		2995A82A2158F68C00947B7D /* Sq_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sq_list.cpp; sourceTree = "<group>"; };
+		2995A82B2158F68C00947B7D /* L_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = L_list.cpp; sourceTree = "<group>"; };
+		2995A82C2158F68C00947B7D /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		2995A82D2158F68C00947B7D /* Static_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Static_list.cpp; sourceTree = "<group>"; };
+		2995A82E2158F68C00947B7D /* Sq_list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sq_list.hpp; sourceTree = "<group>"; };
+		2995A82F2158F68C00947B7D /* L_list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = L_list.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +65,23 @@
 			isa = PBXGroup;
 			children = (
 				2995A8212158F66C00947B7D /* main.cpp */,
+				2995A8282158F68C00947B7D /* list */,
 			);
 			path = DS;
+			sourceTree = "<group>";
+		};
+		2995A8282158F68C00947B7D /* list */ = {
+			isa = PBXGroup;
+			children = (
+				2995A8292158F68C00947B7D /* Static_list.hpp */,
+				2995A82A2158F68C00947B7D /* Sq_list.cpp */,
+				2995A82B2158F68C00947B7D /* L_list.cpp */,
+				2995A82C2158F68C00947B7D /* test.h */,
+				2995A82D2158F68C00947B7D /* Static_list.cpp */,
+				2995A82E2158F68C00947B7D /* Sq_list.hpp */,
+				2995A82F2158F68C00947B7D /* L_list.hpp */,
+			);
+			path = list;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
