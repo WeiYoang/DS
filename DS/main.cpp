@@ -12,5 +12,7 @@ int main(int argc, const char * argv[]) {
     Static_list test;
     test.SetValue(1000);
     std::cout<<test;
+    std::cin>>test;
+    std::cout<<test;
     return 0;
 }
