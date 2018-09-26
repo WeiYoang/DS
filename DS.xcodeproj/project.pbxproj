@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2995A8222158F66C00947B7D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2995A8212158F66C00947B7D /* main.cpp */; };
+		2995A8352159054F00947B7D /* Polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2995A8332159054F00947B7D /* Polynomial.cpp */; };
+		2995A838215A404800947B7D /* SolveMaze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2995A836215A404800947B7D /* SolveMaze.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,10 @@
 		2995A82D2158F68C00947B7D /* Static_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Static_list.cpp; sourceTree = "<group>"; };
 		2995A82E2158F68C00947B7D /* Sq_list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sq_list.hpp; sourceTree = "<group>"; };
 		2995A82F2158F68C00947B7D /* L_list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = L_list.hpp; sourceTree = "<group>"; };
+		2995A8332159054F00947B7D /* Polynomial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Polynomial.cpp; sourceTree = "<group>"; };
+		2995A8342159054F00947B7D /* Polynomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Polynomial.hpp; sourceTree = "<group>"; };
+		2995A836215A404800947B7D /* SolveMaze.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SolveMaze.cpp; sourceTree = "<group>"; };
+		2995A837215A404800947B7D /* SolveMaze.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SolveMaze.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				2995A8212158F66C00947B7D /* main.cpp */,
+				2995A8302159019C00947B7D /* ADT */,
 				2995A8282158F68C00947B7D /* list */,
 			);
 			path = DS;
@@ -82,6 +89,17 @@
 				2995A82F2158F68C00947B7D /* L_list.hpp */,
 			);
 			path = list;
+			sourceTree = "<group>";
+		};
+		2995A8302159019C00947B7D /* ADT */ = {
+			isa = PBXGroup;
+			children = (
+				2995A8332159054F00947B7D /* Polynomial.cpp */,
+				2995A8342159054F00947B7D /* Polynomial.hpp */,
+				2995A836215A404800947B7D /* SolveMaze.cpp */,
+				2995A837215A404800947B7D /* SolveMaze.hpp */,
+			);
+			path = ADT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2995A8222158F66C00947B7D /* main.cpp in Sources */,
+				2995A838215A404800947B7D /* SolveMaze.cpp in Sources */,
+				2995A8352159054F00947B7D /* Polynomial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
