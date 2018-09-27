@@ -7,8 +7,9 @@
 //
 
 #include <iostream>
-#include "ADT/SolveMaze.hpp"
-int main(int argc, const char * argv[]) {
+#include "ADT/Opera.hpp"
+//test for mazepath
+/*int main(int argc, const char * argv[]) {
     srand(unsigned(time(0)));
     MazeMap test(20,20);
     std::cout<<test;
@@ -24,5 +25,19 @@ int main(int argc, const char * argv[]) {
     std::cout<<std::endl;
     std::cout<<std::endl;
 
+    return 0;
+}*/
+//test for formula calulation.
+void EvaluateExpression(Operand& ,Operator& ,char* ,CompareTable& );
+int main(int argc, const char * argv[]) {
+    Operator OR;
+    Operand OD;
+    CompareTable table;
+    char  p[100];
+    std::cout<<"plz,enter the formula you want to caculate,and then ENTER key:";
+    std::cin>>p;
+    std::cout<<"so ,the result is:";
+    EvaluateExpression(OD, OR, p, table);
+    std::cout<<OD.pop()<<std::endl;
     return 0;
 }
