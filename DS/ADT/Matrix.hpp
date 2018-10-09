@@ -16,21 +16,25 @@ struct Triple{
     int i,j;
     ElemType e;
 };
-
+struct Lnode{
+    int i,j;
+    ElemType e;
+    Lnode *right,*down;
+};
 class Matrix{
 private:
     Triple* data;
+    int* rpos;
+    Lnode **rhead,**chead;
     int mu,nu,tu;
 public:
     Matrix();
     ~Matrix();
-    void CopyMatrix(Matrix& );
-    void AddMatrix(Matrix& );
-    void SubMatrix(Matrix& );
-    void MultMatrix(Matrix& );
-    void TransposeMatrix(Matrix& );
+    //void CopyMatrix(Matrix& );
+    Matrix& operator+=(Matrix& );
+    void operator*=(Matrix& );
+    void operator--();   //TransposeMatrix;
     friend std::ostream& operator <<(std::ostream& ,Matrix& );
     friend std::istream& operator >>(std::istream& ,Matrix& );
-    
 };
 #endif /* Matrix_hpp */
