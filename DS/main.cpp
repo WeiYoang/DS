@@ -8,17 +8,15 @@
 
 #include <iostream>
 #include "ADT/Matrix.hpp"
+ using namespace std;
+void test(char** );
 int main(int argc, const char * argv[]) {
-    using namespace std;
-    Matrix test,test1;
-    cin>>test;
-    cout<<endl;
-   // --test;
-    cin>>test1;
-    cout<<endl;
-    cout<<test1;
-    cout<<endl;
-    test*=test1;
-    cout<<test;
+    char *ch=nullptr;
+    test(&ch);
+    cout<<ch;
     return EXIT_SUCCESS;
+}
+void test(char **ch){
+    *ch=new char;
+    cin>>*ch;
 }
