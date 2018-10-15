@@ -5,7 +5,29 @@
 //  Created by WeiYoang on 10/13/18.
 //  Copyright © 2018 WeiYoang. All rights reserved.
 //
-//the mothed is limited by string that cant include empty char; using of '\0' marks end of string.
+//the mothed is limited by string that cant include empty char; using of '\0' marks end of suitable string.
+/*
+ #include <iostream>
+ #include "ADT/Lists.hpp"
+ using namespace std;
+ int main(int argc, const char * argv[]) {
+ char *n=new char[13];
+ n[0]='F';n[1]='(';
+ n[2]='a';n[3]=',';n[4]='d';
+ n[5]=',';n[6]='(';n[7]='b';
+ n[8]=',';n[9]='c';n[10]=')';
+ n[11]=')';n[12]='\0';
+ for (int i=1;n[i]!='\0';i++) cout<<n[i];
+ cout<<endl;
+ lists test1(n);
+ lists test(test1);
+ //test=test1;
+ test.MeTraverse();
+ cout<<test.GlistDepth();
+ cout<<endl;
+ return EXIT_SUCCESS;
+ }
+ */
 #include "Lists.hpp"
 #include <iostream>
 using namespace std;
@@ -17,9 +39,8 @@ void  server(char* c1,char* c2){
         m++;
         if (c1[m]=='(') k++;
         else if (c1[m]==')') k--;
-    } while (c1[m]!='\0'&&(c1[m]==','||k!=0));
+    } while (c1[m]!='\0'&&(c1[m]!=','||k!=0));
     if (c1[m]!='\0'){
-        c2=new char[m+1];
         c2[m]='\0';
         for (int i=1;i<m;i++)
             c2[i]=c1[i];
@@ -32,12 +53,19 @@ void  server(char* c1,char* c2){
         c1[1]='\0';
     }
 }
+lists::lists(){
+    fptr=nullptr;
+}
 lists::lists(char *ch){
     fptr=nullptr;
     Create(&fptr, ch);
+    delete [] ch;
 }
 lists::~lists(){
     Destrayed(fptr);
+}
+lists::lists(lists& L){
+    *this=L;
 }
 void lists::Destrayed(GLnode* L){
     if (L!=nullptr&&L->flag==GLnode::atom) delete L;
@@ -85,17 +113,50 @@ void lists::Create(GLnode **L,char *ch){
     }
 }
 void lists::Traverse(GLnode* L){
-    if(L!=nullptr&&L->flag==GLnode::list){
+    while(L!=nullptr&&L->flag==GLnode::list){
         cout<<"(";
-        while(L){
             Traverse(L->vp.ptr.hp);
             L=L->vp.ptr.tp;
-        }
+    }
         if(L==nullptr){
             cout<<")";
         }
-    }
     if(L!=nullptr&&L->flag==GLnode::atom){
         cout<<L->vp.atom;
     }
+}
+void lists::MeTraverse(){
+    Traverse(fptr);
+    cout<<endl;
+}
+int GetDepth(GLnode* L){
+    if (!L) return 1;
+    if (L->flag==GLnode::atom) return 0;
+    int max,dep;
+    max=0;
+    for (GLnode *pp=L;pp;pp=pp->vp.ptr.tp){
+        dep=GetDepth(pp->vp.ptr.hp);
+        if (dep>max) max=dep;
+    }
+    return max+1;
+}
+int lists::GlistDepth(){
+    return GetDepth(fptr);
+}
+void CopyLists(GLnode **T,GLnode* L){
+    if (!L) *T=nullptr;
+    else {
+        *T=new GLnode;
+        (*T)->flag=L->flag;
+        if (L->flag==GLnode::atom) (*T)->vp.atom=L->vp.atom;
+        else {
+            CopyLists(&((*T)->vp.ptr.hp), L->vp.ptr.hp);
+            CopyLists(&((*T)->vp.ptr.tp), L->vp.ptr.tp);
+        }
+        
+    }
+}
+lists& lists::operator=(lists& L){
+    CopyLists(&(this->fptr), L.fptr);
+    return *this;
 }

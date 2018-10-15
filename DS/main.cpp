@@ -7,16 +7,22 @@
 //
 
 #include <iostream>
-#include "ADT/Matrix.hpp"
+#include "ADT/Lists.hpp"
  using namespace std;
-void test(char** );
 int main(int argc, const char * argv[]) {
-    char *ch=nullptr;
-    test(&ch);
-    cout<<ch;
+    char *n=new char[13];
+    n[0]='F';n[1]='(';
+    n[2]='a';n[3]=',';n[4]='d';
+    n[5]=',';n[6]='(';n[7]='b';
+    n[8]=',';n[9]='c';n[10]=')';
+    n[11]=')';n[12]='\0';
+    for (int i=1;n[i]!='\0';i++) cout<<n[i];
+    cout<<endl;
+    lists test1(n);
+    lists test(test1);
+    //test=test1;
+    test.MeTraverse();
+    cout<<test.GlistDepth();
+    cout<<endl;
     return EXIT_SUCCESS;
-}
-void test(char **ch){
-    *ch=new char;
-    cin>>*ch;
 }

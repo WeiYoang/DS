@@ -27,13 +27,16 @@ class lists{
 private:
     GLnode* fptr;
 public:
+    lists();
     lists(char * );
     lists(lists& ); //design for copy constructor;
     ~lists();
     void Create(GLnode** ,char* );
     void Destrayed(GLnode* );
+    void MeTraverse();
     void Traverse(GLnode* );
     int GlistDepth();
+    lists& operator=(lists&  );
 };
 
 #endif /* Lists_hpp */
